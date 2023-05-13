@@ -6,7 +6,9 @@ import com.example.cartify.Model.Output.GenericResponse;
 import com.example.cartify.Model.User;
 
 import javax.ejb.EJB;
+import javax.ejb.Stateless;
 
+@Stateless
 
 public class UserLogic {
     @EJB

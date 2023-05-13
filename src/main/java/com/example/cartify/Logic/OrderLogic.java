@@ -14,8 +14,11 @@ import com.example.cartify.Model.Product;
 import com.example.cartify.Model.Seller;
 
 import javax.ejb.EJB;
+import javax.ejb.Stateless;
 import java.util.List;
 import java.util.stream.Collectors;
+@Stateless
+
 public class OrderLogic {
     @EJB
     OrderDAOI orderDAO;

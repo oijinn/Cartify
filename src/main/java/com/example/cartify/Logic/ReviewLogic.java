@@ -8,6 +8,9 @@ import com.example.cartify.Model.Review;
 import com.example.cartify.Model.Update.Udt_Review;
 
 import javax.ejb.EJB;
+import javax.ejb.Stateless;
+
+@Stateless
 
 public class ReviewLogic {
     @EJB

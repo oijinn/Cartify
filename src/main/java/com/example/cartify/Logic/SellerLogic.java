@@ -12,10 +12,11 @@ import com.example.cartify.Model.Update.Udt_Seller;
 import com.example.cartify.Model.User;
 
 import javax.ejb.EJB;
+import javax.ejb.Stateless;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
-
+@Stateless
 public class SellerLogic {
     @EJB
     SellerDAOI sellerDAO;
