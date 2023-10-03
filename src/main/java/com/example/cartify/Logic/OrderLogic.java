@@ -19,7 +19,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 @Stateless
 
-public class OrderLogic {
+public class OrderLogic implements OrderLogicI{
     @EJB
     OrderDAOI orderDAO;
     @EJB

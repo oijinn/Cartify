@@ -14,16 +14,16 @@ import java.util.List;
 import java.util.stream.Collectors;
 @Stateless
 
-public class ProductLogic {
+public class ProductLogic implements ProductLogicI{
     @EJB
     ProductDAOI productDAO;
     @EJB
     ReviewDAOI reviewDAO;
     @EJB
-    ReviewLogic reviewLogic;
+    ReviewLogicI reviewLogic;
 
     public GenericResponse getAllProduct (){
-        return new GenericResponse(productDAO.getAllProduct());
+        return new GenericResponse(productDAO.getAllProduct().stream().map(x->getFullProduct(x)).collect(Collectors.toList()));
     }
     public GenericResponse createProduct(Int_Product input) {
         Product object = productDAO.create(input.toProduct());
@@ -46,15 +46,15 @@ public class ProductLogic {
     public GenericResponse deleteProduct (Integer productId) {
         return new GenericResponse(productDAO.delete(productDAO.getProductbyId(productId)));
     }
-    public GenericResponse searchProductByName (String name ) {
+    public GenericResponse searchProductByName (String name) {
         List<Product> result = productDAO.findByConditionLike("Name", name);
         return new GenericResponse(result);
     }
-    public GenericResponse sellerSearchProductByName (String name, String sellerId ) {
+    public GenericResponse sellerSearchProductByName (String name, String sellerId) {
         List<Product> result = productDAO.SellerFindByConditionLike("Name", name, "sellerID", sellerId);
         return new GenericResponse(result);
     }
-    public List<FullProduct> sellerGetAllProduct (Integer sellerId ) {
+    public List<FullProduct> sellerGetAllProduct (Integer sellerId) {
         List<Product> result = productDAO.findByFieldEqual("sellerID", sellerId);
         return result.stream().map(x->getFullProduct(x)).collect(Collectors.toList());
     }

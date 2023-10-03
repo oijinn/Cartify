@@ -13,9 +13,11 @@ import javax.persistence.criteria.Root;
 import javax.ejb.Stateless;
 import java.util.List;
 
+import static com.example.cartify.Utilities.DataSource.getEntityManager;
+
 @Stateless
 public class AdminDAO implements AdminDAOI{
-    private EntityManagerFactory emf;
+    private EntityManagerFactory emf = getEntityManager();
 
 
     public Admin create(Admin input) {

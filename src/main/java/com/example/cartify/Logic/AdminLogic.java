@@ -18,7 +18,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 @Stateless
 
-public class AdminLogic {
+public class AdminLogic implements AdminLogicI{
     @EJB
     AdminDAOI adminDAO;
     @EJB
@@ -30,9 +30,9 @@ public class AdminLogic {
     @EJB
     ProductDAOI productDAO;
     @EJB
-    ProductLogic productLogic;
+    ProductLogicI productLogic;
     @EJB
-    OrderLogic orderLogic;
+    OrderLogicI orderLogic;
 
     public GenericResponse register (Int_Admin input){
         User user = userDAO.create(input.toUser());

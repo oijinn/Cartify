@@ -17,15 +17,15 @@ import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 @Stateless
-public class SellerLogic {
+public class SellerLogic implements SellerLogicI{
     @EJB
     SellerDAOI sellerDAO;
     @EJB
     UserDAOI userDAO;
     @EJB
-    OrderLogic orderLogic;
+    OrderLogicI orderLogic;
     @EJB
-    ProductLogic productLogic;
+    ProductLogicI productLogic;
 
     public GenericResponse register (Int_Seller input){
         User user = userDAO.create(input.toUser());

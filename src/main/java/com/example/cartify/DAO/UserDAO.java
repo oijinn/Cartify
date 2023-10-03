@@ -13,9 +13,11 @@ import javax.persistence.criteria.Root;
 
 import java.util.List;
 
+import static com.example.cartify.Utilities.DataSource.getEntityManager;
+
 @Stateless
 public class UserDAO implements UserDAOI {
-    private EntityManagerFactory emf;
+    private EntityManagerFactory emf = getEntityManager();
 
 
     public User create(User input) {

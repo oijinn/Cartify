@@ -12,7 +12,7 @@ import javax.ejb.Stateless;
 
 @Stateless
 
-public class ReviewLogic {
+public class ReviewLogic implements ReviewLogicI {
     @EJB
     ReviewDAOI reviewDAO;
     public GenericResponse createReview (Int_Review input) {

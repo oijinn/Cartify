@@ -14,9 +14,11 @@ import javax.persistence.criteria.Root;
 import java.util.List;
 import java.util.Locale;
 
+import static com.example.cartify.Utilities.DataSource.getEntityManager;
+
 @Stateless
 public class OrderDAO implements OrderDAOI{
-    private EntityManagerFactory emf;
+    private EntityManagerFactory emf = getEntityManager();
 
 
     public Order create(Order input) {

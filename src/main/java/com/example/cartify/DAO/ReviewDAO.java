@@ -12,9 +12,11 @@ import javax.persistence.criteria.CriteriaUpdate;
 import javax.persistence.criteria.Root;
 import java.util.List;
 
+import static com.example.cartify.Utilities.DataSource.getEntityManager;
+
 @Stateless
 public class ReviewDAO implements ReviewDAOI{
-    private EntityManagerFactory emf;
+    private EntityManagerFactory emf = getEntityManager();
 
 
     public Review create(Review input) {

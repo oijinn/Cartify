@@ -12,9 +12,11 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
 
+import static com.example.cartify.Utilities.DataSource.getEntityManager;
+
 @Stateless
 public class SellerDAO implements SellerDAOI{
-    private EntityManagerFactory emf;
+    private EntityManagerFactory emf = getEntityManager();
 
 
     public Seller create(Seller input) {

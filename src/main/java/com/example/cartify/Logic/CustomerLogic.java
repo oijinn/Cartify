@@ -15,7 +15,7 @@ import java.util.ArrayList;
 import java.util.List;
 @Stateless
 
-public class CustomerLogic {
+public class CustomerLogic implements CustomerLogicI{
     @EJB
     CustomerDAOI customerDAO;
     @EJB

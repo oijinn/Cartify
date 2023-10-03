@@ -3,4 +3,56 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
          version="4.0">
+    <listener>
+        <listener-class>com.example.cartify.Servlet.ServletListener</listener-class>
+    </listener>
+    <servlet>
+        <servlet-name>Login</servlet-name>
+        <servlet-class>com.example.cartify.Servlet.Login</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>Index</servlet-name>
+        <servlet-class>com.example.cartify.Servlet.Index</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>Register</servlet-name>
+        <servlet-class>com.example.cartify.Servlet.Register</servlet-class>
+    </servlet>
+    <servlet>
+    <servlet-name>CustomerHomepage</servlet-name>
+    <servlet-class>com.example.cartify.Servlet.CustomerHomepage</servlet-class>
+    </servlet>
+    <servlet>
+    <servlet-name>SellerHomepage</servlet-name>
+    <servlet-class>com.example.cartify.Servlet.SellerHomepage</servlet-class>
+    </servlet>
+    <servlet>
+    <servlet-name>AdminHomepage</servlet-name>
+    <servlet-class>com.example.cartify.Servlet.AdminHomepage</servlet-class>
+        </servlet>
+    <servlet-mapping>
+        <servlet-name>Login</servlet-name>
+        <url-pattern>/Login</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Index</servlet-name>
+        <url-pattern>/</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Register</servlet-name>
+        <url-pattern>/Register</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>CustomerHomepage</servlet-name>
+        <url-pattern>/CustomerHomepage</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>SellerHomepage</servlet-name>
+        <url-pattern>/SellerHomepage</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>AdminHomepage</servlet-name>
+        <url-pattern>/AdminHomepage</url-pattern>
+    </servlet-mapping>
+
 </web-app>

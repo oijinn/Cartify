@@ -10,15 +10,15 @@ import javax.ejb.Stateless;
 
 @Stateless
 
-public class UserLogic {
+public class UserLogic implements UserLogicI{
     @EJB
     UserDAOI userDAO;
     @EJB
-    SellerLogic sellerLogic;
+    SellerLogicI sellerLogic;
     @EJB
-    CustomerLogic customerLogic;
+    CustomerLogicI customerLogic;
     @EJB
-    AdminLogic adminLogic;
+    AdminLogicI adminLogic;
 
     public GenericResponse login (Int_Userlogin input){
         User user = userDAO.findByFieldEqual("Email", input.getEmail()).get(0);

@@ -1,9 +1,7 @@
 package com.example.cartify.Model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import javax.xml.validation.Schema;
 
 import java.io.Serializable;
 import java.time.LocalDateTime;
@@ -13,6 +11,7 @@ import java.time.LocalDateTime;
  * @author 60112
  */
 @Entity
+@Table(schema = "EPDA")
 public class Customer implements Serializable {
 
     private static final long serialVersionUID = 1L;

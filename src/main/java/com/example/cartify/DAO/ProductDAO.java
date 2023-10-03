@@ -14,9 +14,11 @@ import javax.persistence.criteria.Root;
 import java.util.List;
 import java.util.Locale;
 
+import static com.example.cartify.Utilities.DataSource.getEntityManager;
+
 @Stateless
 public class ProductDAO implements ProductDAOI{
-    private EntityManagerFactory emf;
+    private EntityManagerFactory emf = getEntityManager();
 
 
     public Product create(Product input) {
